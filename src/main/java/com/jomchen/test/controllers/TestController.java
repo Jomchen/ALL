@@ -36,6 +36,17 @@ public class TestController {
                 .toJSONString();
     }
 
+    /**
+     * 表单验证测试
+     */
+    @RequestMapping(value = UrlContents.FORM_TEST)
+    public String formTest() {
+        return "test/form_test";
+    }
+
+
+
+
     @RequestMapping(value = UrlContents.TEST)
     @ResponseBody
     public String test() {

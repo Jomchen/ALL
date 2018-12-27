@@ -9,6 +9,7 @@
 
     <body>
         <a href="/customer00">customer00</a>
+        <a href="/form/test">formTest</a>
 
 
         <p>变量和常量 --------------------------------------------- START</p>
