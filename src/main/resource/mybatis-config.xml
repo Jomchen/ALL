@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <plugins>
+        <plugin interceptor="com.jomchen.test.mybatis.plugin.ExamplePlugin">
+            <property name="someproperty" value="100"/>
+        </plugin>
+    </plugins>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://10.0.0.210:3306/zzw1?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="write"/>
+                <property name="password" value="zzw123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <mappers>
+        <mapper resource="mapper/ThirdUserWechatMapper.xml"/>
+        <!--<mapper resource="org/mybatis/example/BlogMapper.xml"/>-->
+        <!--<package name="mapper" />-->
+    </mappers>
+
+
+</configuration>
+
+
+
+

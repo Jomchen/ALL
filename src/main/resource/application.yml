@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+customer:
+  rabbitmq:
+    host: 10.0.0.16
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
+
+spring:
+  redis:
+    password: 123456
+    host: 10.0.0.16
+    port: 6379
+    database: 0
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jomchen.test.mybatis.mapper.ThirdUserWechatMapper">
+
+    <resultMap id="thirdUserWechat" type="com.jomchen.test.model.ThirdUserWechat">
+        <id property="id" column="id"/>
+        <result property="openid" column="openid"/>
+        <result property="phone" column="phone"/>
+        <result property="userId" column="user_id"/>
+        <result property="deletec" column="deletec"/>
+        <result property="remark" column="remark"/>
+        <result property="remark" column="remark"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="queryById" resultMap="thirdUserWechat">
+        SELECT * FROM third_user_wechat WHERE id = #{id}
+    </select>
+
+</mapper>
