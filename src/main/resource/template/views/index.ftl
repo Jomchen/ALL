@@ -8,8 +8,11 @@
     </head>
 
     <body>
-        <a href="/customer00">customer00</a>
         <a href="/form/test">formTest</a>
+
+
+
+
 
 
         <p>变量和常量 --------------------------------------------- START</p>
@@ -22,14 +25,9 @@
         </#list>
         <p>变量和常量 --------------------------------------------- END</p>
         <div class="index">我的外部样式</div>
-        <#--<#include "/template/views/test/test.ftl"/>
-        <#import "/template/views/macro/macro00.ftl" as p/>
-        <@p.pp>独孤求败</@p.pp>-->
 
-        <#include "/template/views/test/test.ftl"/>
-        <#import "/template/views/macro/macro00.ftl" as p/>
+        <#import "/template/views/common/macro00.ftl" as p/>
         <@p.pp>独孤求败</@p.pp>
-
     </body>
 
 </html>

@@ -1,6 +1,7 @@
 server:
   port: 8080
 
+# rabbitmq config
 customer:
   rabbitmq:
     host: 10.0.0.16
@@ -9,6 +10,7 @@ customer:
     password: guest
     virtualHost: /
 
+# redis config
 spring:
   redis:
     password: 123456

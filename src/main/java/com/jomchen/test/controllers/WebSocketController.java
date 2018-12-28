@@ -5,14 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * create by Jomchen on 2018/12/19
+ * create by Jomchen on 2018/12/28
  */
 @Controller
-public class CustomerController {
+public class WebSocketController {
 
-    @RequestMapping(value = UrlContents.CUSTOMER_00)
-    public String customer00() {
-        return "customer/customer00";
+    @RequestMapping(value = UrlContents.WEBSOCKET_SIMPLE)
+    public String simple() {
+        return "websocket/simple";
     }
 
 }
