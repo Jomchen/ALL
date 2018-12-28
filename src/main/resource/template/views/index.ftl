@@ -10,11 +10,7 @@
     <body>
         <a href="/form/test">表单测试</a>
         <a href="/websocket/websocket/page">websocket页面</a>
-
-
-
-
-
+        <a href="/sockjs/page">sockjs页面</a>
 
         <p>变量和常量 --------------------------------------------- START</p>
         <div>username：${username}</div>
