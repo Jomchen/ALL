@@ -31,6 +31,7 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer{
                 .setAllowedOrigins("*")
                 .addInterceptors(simpleWebSocketInterceptor)
                 .setHandshakeHandler(simpleWebSocketHandshake)
+                /*.withSockJS()*/
                 ;
     }
 
