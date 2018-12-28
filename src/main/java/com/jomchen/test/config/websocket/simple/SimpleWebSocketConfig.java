@@ -3,13 +3,11 @@ package com.jomchen.test.config.websocket.simple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean;
-
-import javax.websocket.ContainerProvider;
+import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
 /**
  * create by Jomchen on 12/27/18
@@ -29,7 +27,10 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer{
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry.addHandler(simpleWebSocketHandler, "/simpleWebSocket")
                 .setAllowedOrigins("*")
-                .addInterceptors(simpleWebSocketInterceptor)
+                .addInterceptors(
+                        new HttpSessionHandshakeInterceptor(),
+                        simpleWebSocketInterceptor
+                )
                 .setHandshakeHandler(simpleWebSocketHandshake)
                 /*.withSockJS()*/
                 ;

@@ -4,7 +4,8 @@ server:
 # rabbitmq config
 customer:
   rabbitmq:
-    host: 10.0.0.16
+#    host: 10.0.0.16
+    host: 192.168.0.105
     port: 5672
     username: guest
     password: guest
@@ -14,7 +15,8 @@ customer:
 spring:
   redis:
     password: 123456
-    host: 10.0.0.16
+#    host: 10.0.0.16
+    host: 192.168.0.105
     port: 6379
     database: 0
 

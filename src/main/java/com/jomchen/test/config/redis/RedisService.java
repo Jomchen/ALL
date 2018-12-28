@@ -19,11 +19,17 @@ public class RedisService {
     @Qualifier("stringRedisTemplate")
     private RedisTemplate<String, String> stringRedisTemplate;
 
+    /**
+     * 保存对象
+     */
     public void saveEntity(String key, Object data) {
         String jsonData = JSONObject.toJSONString(data);
         stringRedisTemplate.opsForValue().set(key, jsonData);
     }
 
+    /**
+     * 保存有实效性的对象
+     */
     public void saveEntity(
             String key,
             Object data,
@@ -33,10 +39,16 @@ public class RedisService {
         stringRedisTemplate.opsForValue().set(key, jsonData, time, timeUnit);
     }
 
+    /**
+     * 移除数据
+     */
     public boolean remove(String key) {
         return stringRedisTemplate.delete(key);
     }
 
+    /**
+     * 获取对象
+     */
     public <T> T getEntity(String key, TypeReference<T> typeReference) {
         String data = stringRedisTemplate.opsForValue().get(key);
         if (null == data) { return null; };
