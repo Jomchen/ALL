@@ -19,6 +19,6 @@ public interface UrlContents {
     String TEST_00 = "/test00";
     String TEST_01 = "/test01";
 
-    String WEBSOCKET_SIMPLE = "/websocket/simple";
+    String WEBSOCKET_SIMPLE = "/websocket/websocket/page";
 
 }

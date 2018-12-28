@@ -8,8 +8,8 @@
     </head>
 
     <body>
-        <a href="/form/test">formTest</a>
-        <a href="/websocket/simple">simpleWebSocket</a>
+        <a href="/form/test">表单测试</a>
+        <a href="/websocket/websocket/page">websocket页面</a>
 
 
 

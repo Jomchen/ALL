@@ -12,7 +12,7 @@ public class WebSocketController {
 
     @RequestMapping(value = UrlContents.WEBSOCKET_SIMPLE)
     public String simple() {
-        return "websocket/simple";
+        return "websocket/websocket_page";
     }
 
 }

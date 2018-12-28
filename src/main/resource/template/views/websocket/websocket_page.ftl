@@ -3,7 +3,7 @@
     <head>
         <title>简单 websocket</title>
         <#include "/template/views/common/component.ftl"/>
-        <script type="text/javascript" src="/template/static/js/websocket/simple.js"></script>
+        <script type="text/javascript" src="/template/static/js/websocket/websocket.js"></script>
     </head>
 
     <body>
