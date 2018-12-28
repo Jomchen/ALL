@@ -1,29 +1,15 @@
 package com.jomchen.test;
 
-import com.jomchen.test.mybatis.mapper.ThirdUserWechatMapper;
-import com.jomchen.test.model.ThirdUserWechat;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.io.ClassPathResource;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.Arrays;
 
 /**
  * create by Jomchen on 2018/11/19
  */
 @SpringBootApplication
 @PropertySource({"service.properties"})
-@ImportResource({"mybatis-config.xml"})
+/*@ImportResource({"mybatis-config.xml"})*/
 public class JomchenApplication {
 
     public static void main(String[] args) {

@@ -9,6 +9,7 @@
 
     <body>
         <a href="/form/test">formTest</a>
+        <a href="/websocket/simple">simpleWebSocket</a>
 
 
 
