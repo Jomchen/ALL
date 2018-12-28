@@ -26,7 +26,7 @@ public class SimpleWebSocketInterceptor implements HandshakeInterceptor {
             Map<String, Object> map) throws Exception {
 
         // 一般用于 阻止握手，传递一些可获取的参数到会话
-        logger.info("---------------------------------------------- processing websocket handshake interceptor BERORE !!!");
+        logger.info("---------------------------------------------- processing simple websocket interceptor BERORE !!!");
         return true;
     }
 
@@ -37,7 +37,7 @@ public class SimpleWebSocketInterceptor implements HandshakeInterceptor {
             WebSocketHandler webSocketHandler,
             Exception e) {
 
-        logger.info("---------------------------------------------- processing websocket handshake interceptor AFTER !!!");
+        logger.info("---------------------------------------------- processing simple websocket interceptor AFTER !!!");
     }
 
 }

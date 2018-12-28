@@ -21,6 +21,8 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer{
     @Autowired
     private SimpleWebSocketInterceptor simpleWebSocketInterceptor;
     @Autowired
+    private SimpleWebSocketHandshake simpleWebSocketHandshake;
+    @Autowired
     private SimpleWebSocketHandler simpleWebSocketHandler;
 
     @Override
@@ -28,6 +30,7 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer{
         registry.addHandler(simpleWebSocketHandler, "/simpleWebSocket")
                 .setAllowedOrigins("*")
                 .addInterceptors(simpleWebSocketInterceptor)
+                .setHandshakeHandler(simpleWebSocketHandshake)
                 ;
     }
 
