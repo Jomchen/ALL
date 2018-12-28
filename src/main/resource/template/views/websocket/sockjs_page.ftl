@@ -5,7 +5,7 @@
             sockjs测试
         </title>
         <#include "/template/views/common/component.ftl"/>
-        <script type="text/javascript" src="/template/static/js/websocket/sockjs_page"></script>
+        <script type="text/javascript" src="/template/static/js/websocket/sockjs_page.js"></script>
     </head>
 
     <body>
