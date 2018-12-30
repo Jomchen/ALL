@@ -32,7 +32,7 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer{
                         simpleWebSocketInterceptor
                 )
                 .setHandshakeHandler(simpleWebSocketHandshake)
-                /*.withSockJS()*/
+                .withSockJS()
                 ;
     }
 
