@@ -12,7 +12,7 @@ import org.springframework.web.socket.server.support.HttpSessionHandshakeInterce
 /**
  * create by Jomchen on 12/27/18
  */
-@Configuration
+/*@Configuration
 @EnableWebSocket
 public class SimpleWebSocketConfig implements WebSocketConfigurer{
 
@@ -45,4 +45,4 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer{
         return container;
     }
 
-}
+}*/

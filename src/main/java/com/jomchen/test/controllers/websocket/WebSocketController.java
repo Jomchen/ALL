@@ -1,4 +1,4 @@
-package com.jomchen.test.controllers;
+package com.jomchen.test.controllers.websocket;
 
 import com.jomchen.test.utils.UrlContents;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,6 @@ public class WebSocketController {
 
     /**
      * 原生 websocket
-     * @return
      */
     @RequestMapping(value = UrlContents.WEBSOCKET_SIMPLE)
     public String simple() {
@@ -20,11 +19,17 @@ public class WebSocketController {
     }
 
     /**
-     * sockjs 运用
+     * sockjs 页面
      */
     @RequestMapping(value = UrlContents.SOCKJS_PAGE)
     public String sockjsPage() {
         return "websocket/sockjs_page";
     }
+
+    /**
+     * stomp 页面
+     */
+    @RequestMapping(value = UrlContents.STOMP_PAGE)
+    public String stompPage() { return "websocket/stomp_page"; }
 
 }

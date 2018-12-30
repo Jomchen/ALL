@@ -10,7 +10,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 /**
  * create by Jomchen on 12/30/18
  */
-@Component
+/*@Component
 public class SimpleWebSocketHandler2 extends TextWebSocketHandler {
 
     Logger logger = LoggerFactory.getLogger(SimpleWebSocketHandler2.class);
@@ -24,4 +24,4 @@ public class SimpleWebSocketHandler2 extends TextWebSocketHandler {
         logger.info("*******************>>" + data2);
     }
 
-}
+}*/

@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * create by Jomchen on 12/27/18
  */
-@Component
+/*@Component
 public class SimpleWebSocketInterceptor implements HandshakeInterceptor {
 
     private Logger logger = LoggerFactory.getLogger(SimpleWebSocketInterceptor.class);
@@ -40,4 +40,4 @@ public class SimpleWebSocketInterceptor implements HandshakeInterceptor {
         logger.info("---------------------------------------------- processing simple websocket interceptor AFTER !!!");
     }
 
-}
+}*/

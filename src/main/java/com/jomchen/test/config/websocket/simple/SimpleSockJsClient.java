@@ -15,13 +15,13 @@ import java.util.List;
 /**
  * create by Jomchen on 12/30/18
  */
-@Configuration
+/*@Configuration
 public class SimpleSockJsClient {
 
     @Autowired
     private SimpleWebSocketHandler2 simpleWebSocketHandler2;
 
-    /*@PostConstruct
+    @PostConstruct
     public void execute() {
         List<Transport> transports = new LinkedList<>();
         StandardWebSocketClient standardWebSocketClient = new StandardWebSocketClient();
@@ -32,5 +32,5 @@ public class SimpleSockJsClient {
 
         SockJsClient sockJsClient = new SockJsClient(transports);
         sockJsClient.doHandshake(simpleWebSocketHandler2, "ws://192.168.0.103:8080/simpleWebSocket");
-    }*/
-}
+    }
+}*/

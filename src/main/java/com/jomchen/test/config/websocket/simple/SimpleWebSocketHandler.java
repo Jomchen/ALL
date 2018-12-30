@@ -14,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * create by Jomchen on 12/27/18
  */
+/*
 @Component
 public class SimpleWebSocketHandler extends TextWebSocketHandler {
 
@@ -64,3 +65,4 @@ public class SimpleWebSocketHandler extends TextWebSocketHandler {
     }
 
 }
+*/

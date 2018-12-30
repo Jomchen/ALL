@@ -15,7 +15,7 @@ import java.util.Set;
 /**
  * create by Jomchen on 2018/12/28
  */
-@Component
+/*@Component
 public class SimpleWebSocketHandshake extends DefaultHandshakeHandler {
 
     // DefaultHandshakeHandler
@@ -52,4 +52,4 @@ public class SimpleWebSocketHandshake extends DefaultHandshakeHandler {
         super.handleInvalidConnectHeader(request, response);
     }
 
-}
+}*/

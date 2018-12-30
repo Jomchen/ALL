@@ -8,9 +8,15 @@
     </head>
 
     <body>
-        <a href="/form/test">表单测试</a>
-        <a href="/websocket/websocket/page">websocket页面</a>
-        <a href="/sockjs/page">sockjs页面</a>
+        <ul class="left-munu">
+            <li><a href="/form/test">表单测试</a></li>
+            <li><a href="/websocket/simple/page">简单 页面</a></li>
+            <li><a href="/websocket/sockjs/page">sockjs 页面</a></li>
+            <li><a href="/websocket/stomp/page">stomp 页面</a></li>
+        </ul>
+
+
+
 
         <p>变量和常量 --------------------------------------------- START</p>
         <div>username：${username}</div>

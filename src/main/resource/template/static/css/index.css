@@ -1,5 +1,17 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 .index {
     width: 100px;
     height: 100px;
     background-color: red;
+}
+
+.left-munu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
 }

@@ -19,7 +19,8 @@ public interface UrlContents {
     String TEST_00 = "/test00";
     String TEST_01 = "/test01";
 
-    String WEBSOCKET_SIMPLE = "/websocket/websocket/page";
-    String SOCKJS_PAGE = "/sockjs/page";
+    String WEBSOCKET_SIMPLE = "/websocket/simple/page";
+    String SOCKJS_PAGE = "/websocket/sockjs/page";
+    String STOMP_PAGE = "/websocket/stomp/page";
 
 }
