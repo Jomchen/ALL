@@ -19,7 +19,7 @@ public class WebSocketStompController {
 
     private Logger logger = LoggerFactory.getLogger(WebSocketStompController.class);
 
-    @MessageMapping("/greeting")
+    @MessageMapping("/greeting") // /app/greenting 可以请求到
     public ResultObject stompGreeting(@RequestBody RequestObject<String> requestObject) {
         logger.info("This is content of Stomp =>" + requestObject);
         ResultObject<String> resultObject = ResultObject.buildSuccess(
@@ -29,7 +29,7 @@ public class WebSocketStompController {
         return resultObject;
     }
 
-    @SubscribeMapping("/once_once")
+    @SubscribeMapping("/once_once") // /app/once_once 可以一次性订阅到
     public ResultObject subscribe() {
         ResultObject<String> resultObject = ResultObject.buildSuccess(
                 RequestIdGenerator.generate(),
