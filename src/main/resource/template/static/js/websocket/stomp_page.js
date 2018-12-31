@@ -23,7 +23,11 @@ $(function () {
                 var subscribeIdOne = this.subscribe("/topic/greeting", function(data) {
                     console.log("topic接收到参数是：" + data);
                     var resultData = JSON.parse(data.body);
-                    $("#receiveData").append("<p>topic回调体=>" + resultData.data + "</p>");
+                    if (resultData.code == 0) {
+                        $("#receiveData").append("<p>topic回调体=>" + resultData.data + "</p>");
+                    } else {
+                        $("#receiveData").append("<p>topic回调体=>" + resultData.message + "</p>");
+                    }
                 });
                 var subscribeIdTwo = this.subscribe("/queue/greeting", function(data) {
                     console.log("queue接收到参数是：" + data);

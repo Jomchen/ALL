@@ -3,10 +3,15 @@ package com.jomchen.test.controllers.websocket;
 import com.jomchen.test.utils.RequestIdGenerator;
 import com.jomchen.test.utils.RequestObject;
 import com.jomchen.test.utils.ResultObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.security.Principal;
 
 /**
  * create by Jomchen on 12/30/18
@@ -14,11 +19,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class WebSocketStompController {
 
+    private Logger logger = LoggerFactory.getLogger(WebSocketStompController.class);
+
     @MessageMapping("/greeting")
     public ResultObject stompGreeting(@RequestBody RequestObject<String> requestObject) {
-        System.out.println("这是 stomp 的内容：" + requestObject);
-        System.out.println("这是 stomp 的内容：" + requestObject);
-        System.out.println("这是 stomp 的内容：" + requestObject);
+        logger.info("This is content of Stomp =>" + requestObject);
         ResultObject<String> resultObject = ResultObject.buildSuccess(
                 RequestIdGenerator.generate(),
                 requestObject.getData()
@@ -33,6 +38,16 @@ public class WebSocketStompController {
                 "我是初始化"
         );
         return resultObject;
+    }
+
+    @MessageExceptionHandler
+    public ResultObject handleError(Throwable throwable) {
+        logger.error(throwable.getMessage(), throwable);
+        ResultObject<String> result = ResultObject.buildFail(
+                RequestIdGenerator.generate(),
+                throwable.getMessage()
+        );
+        return result;
     }
 
 

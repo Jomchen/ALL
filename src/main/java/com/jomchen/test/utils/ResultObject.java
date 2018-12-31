@@ -36,6 +36,14 @@ public class ResultObject<T> {
         return resultObject;
     }
 
+    public static <T> ResultObject<T> buildFail(String requestId, String msg) {
+        ResultObject<T> resultObject = new ResultObject<>();
+        resultObject.setRequestId(requestId);
+        resultObject.setCode(ResultObject.FAIL_CODE);
+        resultObject.setMessage(msg);
+        return resultObject;
+    }
+
     public <T> ResultObject<T> buildFail(String requestId, CodeEnum codeEnum) {
         ResultObject<T> resultObject = new ResultObject<>();
         resultObject.setRequestId(requestId);
