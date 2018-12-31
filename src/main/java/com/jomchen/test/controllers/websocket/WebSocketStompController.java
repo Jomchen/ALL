@@ -71,7 +71,8 @@ public class WebSocketStompController {
         String sendUser = jsonObject.getString("sendUser");
         String sendData = jsonObject.getString("sendData");
         logger.info("要发送的人是：" + sendUser + "---信息是：" + sendData);
-        simpMessagingTemplate.convertAndSendToUser(sendUser, "/queue/sendToUser", sendData);
+        ResultObject resultObject = ResultObject.buildSuccess(RequestIdGenerator.generate(),sendData);
+        simpMessagingTemplate.convertAndSendToUser(sendUser, "/queue/sendToUser", resultObject);
     }
 
     /**
