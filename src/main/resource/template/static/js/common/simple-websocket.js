@@ -14,7 +14,7 @@ function WebSocketFunction() {
     this.onerrorEvent = function() {};
 }
 
-function SimpleWebSocket(websocketFunction) {
+function JomchenSimpleWebSocket(websocketFunction) {
     this.websocket;
     this.closeWebSocket = function() {
         this.websocket.close();
@@ -55,6 +55,12 @@ function SimpleWebSocket(websocketFunction) {
     };
 }
 
+function JomchenStompWebSocket() {
+    this.websocket;
+    this.setUpConnection;
+    this.sendData;
+    this.closeWebSocket;
+}
 
 /*
 function JomchenWebSocket() {

@@ -90,6 +90,18 @@
         <artifactId>spring-boot-starter-websocket</artifactId>
     </dependency>
 
+    <!-- 这两个依赖的版本是如此对应当前的 spring-boot 版本，否则报错 -->
+    <!--<dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-messaging</artifactId>
+      <version>5.0.11.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-websocket</artifactId>
+      <version>5.0.11.RELEASE</version>
+    </dependency>-->
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
@@ -100,16 +112,7 @@
       <artifactId>freemarker</artifactId>
       <version>2.3.23</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-messaging</artifactId>
-      <version>4.3.7.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-websocket</artifactId>
-      <version>4.3.7.RELEASE</version>
-    </dependency>
+
 
     <dependency>
       <groupId>com.rabbitmq</groupId>

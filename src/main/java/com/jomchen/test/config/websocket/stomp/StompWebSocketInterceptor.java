@@ -1,9 +1,10 @@
-package com.jomchen.test.config.websocket.simple;
+package com.jomchen.test.config.websocket.stomp;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.server.HandshakeInterceptor;
@@ -11,12 +12,12 @@ import org.springframework.web.socket.server.HandshakeInterceptor;
 import java.util.Map;
 
 /**
- * create by Jomchen on 12/27/18
+ * create by Jomchen on 12/30/18
  */
-@Component("simpleWebSocketInterceptor")
-public class SimpleWebSocketInterceptor implements HandshakeInterceptor {
+@Component("stompWebSocketInterceptor")
+public class StompWebSocketInterceptor implements HandshakeInterceptor {
 
-    private Logger logger = LoggerFactory.getLogger(SimpleWebSocketInterceptor.class);
+    private Logger logger = LoggerFactory.getLogger(StompWebSocketInterceptor.class);
 
     @Override
     public boolean beforeHandshake(
@@ -24,9 +25,7 @@ public class SimpleWebSocketInterceptor implements HandshakeInterceptor {
             ServerHttpResponse serverHttpResponse,
             WebSocketHandler webSocketHandler,
             Map<String, Object> map) throws Exception {
-
-        // 一般用于 阻止握手，传递一些可获取的参数到会话
-        logger.info("---------------------------------------------- processing simple websocket interceptor BERORE !!!");
+        logger.info("--------------------------------------------> STOMP interceptor BEFORE");
         return true;
     }
 
@@ -35,9 +34,7 @@ public class SimpleWebSocketInterceptor implements HandshakeInterceptor {
             ServerHttpRequest serverHttpRequest,
             ServerHttpResponse serverHttpResponse,
             WebSocketHandler webSocketHandler,
-            Exception e) {
-
-        logger.info("---------------------------------------------- processing simple websocket interceptor AFTER !!!");
+            @Nullable Exception e) {
+        logger.info("--------------------------------------------> STOMP interceptor AFTER");
     }
-
 }

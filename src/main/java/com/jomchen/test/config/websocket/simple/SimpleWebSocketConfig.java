@@ -1,6 +1,7 @@
 package com.jomchen.test.config.websocket.simple;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
@@ -12,15 +13,18 @@ import org.springframework.web.socket.server.support.HttpSessionHandshakeInterce
 /**
  * create by Jomchen on 12/27/18
  */
-/*@Configuration
+@Configuration
 @EnableWebSocket
 public class SimpleWebSocketConfig implements WebSocketConfigurer{
 
     @Autowired
+    @Qualifier("simpleWebSocketInterceptor")
     private SimpleWebSocketInterceptor simpleWebSocketInterceptor;
     @Autowired
+    @Qualifier("simpleWebSocketHandshake")
     private SimpleWebSocketHandshake simpleWebSocketHandshake;
     @Autowired
+    @Qualifier("simpleWebSocketHandler")
     private SimpleWebSocketHandler simpleWebSocketHandler;
 
     @Override
@@ -45,4 +49,4 @@ public class SimpleWebSocketConfig implements WebSocketConfigurer{
         return container;
     }
 
-}*/
+}

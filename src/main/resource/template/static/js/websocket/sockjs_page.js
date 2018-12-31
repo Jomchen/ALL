@@ -32,7 +32,7 @@ $(function() {
             $("#receiveData").append("<p>" + e.data + "</p>");
         };
         sock.onclose = function() {
-            $("#receiveData").append("<p>连接已经关闭或不能打开</p>");
+            $("#receiveData").append("<p>连接已关闭</p>");
         };
     });
     $("#closeConnection").click(function() {
