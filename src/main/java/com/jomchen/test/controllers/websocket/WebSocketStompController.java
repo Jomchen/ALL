@@ -11,8 +11,6 @@ import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.security.Principal;
-
 /**
  * create by Jomchen on 12/30/18
  */
@@ -49,6 +47,5 @@ public class WebSocketStompController {
         );
         return result;
     }
-
 
 }
