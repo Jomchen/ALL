@@ -1,9 +1,10 @@
 package com.jomchen.test.controllers.websocket;
 
-import com.alibaba.fastjson.JSONObject;
 import com.jomchen.test.utils.RequestIdGenerator;
+import com.jomchen.test.utils.RequestObject;
 import com.jomchen.test.utils.ResultObject;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -14,15 +15,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class WebSocketStompController {
 
     @MessageMapping("/greeting")
-    public String stompGreeting(@RequestBody String body) {
-        System.out.println("这是 stomp 的内容：" + body);
-        System.out.println("这是 stomp 的内容：" + body);
-        System.out.println("这是 stomp 的内容：" + body);
+    public ResultObject stompGreeting(@RequestBody RequestObject<String> requestObject) {
+        System.out.println("这是 stomp 的内容：" + requestObject);
+        System.out.println("这是 stomp 的内容：" + requestObject);
+        System.out.println("这是 stomp 的内容：" + requestObject);
         ResultObject<String> resultObject = ResultObject.buildSuccess(
                 RequestIdGenerator.generate(),
-                null
+                requestObject.getData()
         );
-        return JSONObject.toJSONString(resultObject);
+        return resultObject;
     }
+
+    @SubscribeMapping("/once_once")
+    public ResultObject subscribe() {
+        ResultObject<String> resultObject = ResultObject.buildSuccess(
+                RequestIdGenerator.generate(),
+                "我是初始化"
+        );
+        return resultObject;
+    }
+
 
 }

@@ -37,4 +37,11 @@ public class RequestObject<T> {
         this.data = data;
     }
 
+    @Override
+    public String toString() {
+        return "RequestObject{" +
+                "requestId='" + requestId + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }

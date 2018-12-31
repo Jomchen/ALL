@@ -25,13 +25,13 @@ public class StompWebSocketConfig implements WebSocketMessageBrokerConfigurer {
                 .setAllowedOrigins("*")
                 .addInterceptors(stompWebSocketInterceptor)
                 .withSockJS();
-
     }
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.setApplicationDestinationPrefixes("/app");
         registry.enableSimpleBroker("/topic", "/queue");
+        registry.setUserDestinationPrefix("/user");
     }
 
 }
