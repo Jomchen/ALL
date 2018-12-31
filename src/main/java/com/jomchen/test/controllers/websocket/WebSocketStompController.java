@@ -65,11 +65,12 @@ public class WebSocketStompController {
      * 订阅 /user/queue/stompToUser 相应用户可以接收到这里反馈的信息
      */
     @MessageMapping("/sendToUser")
-    public void sendToUser(@RequestBody RequestObject<String> requestObject) {
-        String jsonStr = requestObject.getData();
-        JSONObject jsonObject = JSONObject.parseObject(jsonStr);
+    public void sendToUser(@RequestBody RequestObject<Object> requestObject) {
+        Object jsonStr = requestObject.getData();
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(jsonStr));
         String sendUser = jsonObject.getString("sendUser");
         String sendData = jsonObject.getString("sendData");
+        logger.info("要发送的人是：" + sendUser + "---信息是：" + sendData);
         simpMessagingTemplate.convertAndSendToUser(sendUser, "/queue/sendToUser", sendData);
     }
 

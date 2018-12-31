@@ -59,9 +59,9 @@ $(function () {
      * 发送信息
      */
     $("#sendButton").click(function() {
-        var sendData = $("#sendData").val();
-        var sendJson = {"requestId": "Linux", "data": sendData};
-        var sendStomp = JSON.stringify(sendJson);
+        var data = $("#sendData").val();
+        var sendObj = {"requestId": "Linux", "data": data};
+        var sendStomp = JSON.stringify(sendObj);
 
         var hasBroad = confirm("是否广播发送？");
         if (hasBroad) {
@@ -76,9 +76,10 @@ $(function () {
 
         var sendUser = prompt("指定您要发送的用户，默认为 jomchen", "jomchen");
         var sendData = prompt("指定要发送的信息，默认为 LINUX", "LINUX");
-        var sendDataObj = {"sendUser": sendUser, "sendData": sendData};
-        sendJson['data'] = sendDataObj;
-        stompClient.send("/app/sendToUser", {}, JSON.stringify(sendJson));
+
+        var dataObj = {"sendUser": sendUser, "sendData": data};
+        sendObj['data'] = dataObj;
+        stompClient.send("/app/sendToUser", {}, JSON.stringify(sendObj));
     });
 
     /**
