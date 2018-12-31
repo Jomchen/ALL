@@ -10,7 +10,9 @@ import org.springframework.messaging.simp.stomp.StompCommand;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.ChannelInterceptor;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -20,7 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component("stompChannelInterceptor")
 public class StompChannelInterceptor implements ChannelInterceptor {
 
-    Map<String, JomchenAuthentication> AUTHENTICATION = new ConcurrentHashMap<>();
+    /*Map<String, JomchenAuthentication> AUTHENTICATION = new ConcurrentHashMap<>();*/
 
     private Logger logger = LoggerFactory.getLogger(StompChannelInterceptor.class);
 
@@ -39,15 +41,23 @@ public class StompChannelInterceptor implements ChannelInterceptor {
         }
 
         if (StompCommand.CONNECT.equals(stompHeaderAccessor.getCommand())) {
-            logger.info("-------------> Stomp 首次连接");
-            String username = stompHeaderAccessor.getNativeHeader("username").get(0);
-            String passowrd = stompHeaderAccessor.getNativeHeader("password").get(0);
-            JomchenAuthentication jomchenAuthentication = new JomchenAuthentication(username);
-            AUTHENTICATION.put(username, jomchenAuthentication);
-            stompHeaderAccessor.setUser(jomchenAuthentication);
+            logger.info("-------------> Stomp 首次连接 START");
+
+            List<String> usernameList = stompHeaderAccessor.getNativeHeader("username");
+            List<String> passowrdList = stompHeaderAccessor.getNativeHeader("password");
+            if (null != usernameList && !usernameList.isEmpty() && null != passowrdList && !passowrdList.isEmpty()) {
+                String username = usernameList.get(0);
+                if (!StringUtils.isEmpty(username)) {
+                    JomchenAuthentication jomchenAuthentication = new JomchenAuthentication(username);
+                    /*AUTHENTICATION.put(username, jomchenAuthentication);*/
+                    stompHeaderAccessor.setUser(jomchenAuthentication);
+                }
+            }
+            logger.info("-------------> Stomp 首次连接 END");
             return message;
         } else {
-            logger.info("-------------> Stomp 非首次连接");
+            logger.info("-------------> Stomp 非首次连接 START");
+            logger.info("-------------> Stomp 非首次连接 END");
             return message;
         }
     }

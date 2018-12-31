@@ -15,9 +15,10 @@ public class JomchenAuthentication implements Principal {
         this.name = name;
     }
 
+    // 如果有对这个类注入验证用户，则这里一定要重写获取相应的用户能够获取 name，否则报错gigi
     @Override
     public String getName() {
-        return null;
+        return this.name;
     }
 
     @Override
