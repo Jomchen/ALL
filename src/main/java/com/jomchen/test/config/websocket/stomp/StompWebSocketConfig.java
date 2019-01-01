@@ -33,9 +33,9 @@ public class StompWebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.setApplicationDestinationPrefixes("/app");
-        registry.enableSimpleBroker("/topic", "/queue");
-        registry.setUserDestinationPrefix("/user");
+        registry.setApplicationDestinationPrefixes("/app"); // 访问处理器前缀
+        registry.enableSimpleBroker("/topic", "/queue"); // 订阅前缀
+        registry.setUserDestinationPrefix("/user"); // 点对点订阅前缀，配合订阅前缀即 /user/queue/其它
     }
 
     /**

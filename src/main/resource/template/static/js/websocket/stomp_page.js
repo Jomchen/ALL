@@ -7,7 +7,6 @@ $(function () {
      */
     $("#setUpConnection").click(function () {
         var loginName = prompt("请办理入您的登录名字，默认为 jomchen", "jomchen");
-
         var sockJS = new SockJS('http://127.0.0.1:8080/stompPoint');
         stompClient = Stomp.over(sockJS);
         stompClient.connect(
@@ -26,7 +25,7 @@ $(function () {
                     }
                 }, {"otherHeaders": "otherHeaders"});
                 var queueId = this.subscribe("/queue/greeting", function(data) {
-                    console.log("queue接收到参数是：" + data);
+                    console.log("广播接收到参数是：" + data);
                     var resultData = JSON.parse(data.body);
                     $("#receiveData").append("<p>queue回调体=>" + resultData.data + "</p>");
                 }, {"otherHeaders": "otherHeaders"});
@@ -36,17 +35,13 @@ $(function () {
                     $("#receiveData").append("<p>发给自己的回调体=>" + resultData.data + "</p>");
                 }, {"otherHeaders": "otherHeaders"});
                 var sendToUserId = this.subscribe("/user/queue/sendToUser", function(data) {
-                    console.log("指定发送，接收到参数是：" + data);
+                    console.log("指定发送接收到参数是：" + data);
                     var resultData = JSON.parse(data.body);
                     $("#receiveData").append("<p>指定发送的回调体=>" + resultData.data + "</p>");
                 }, {"otherHeaders": "otherHeaders"});
                 this.subscribe("/app/once_once", function(data) {
                     var resultData = JSON.parse(data.body);
                     $("#receiveData").append("<p>一次性subscribe回调体=>" + resultData.data + "</p>");
-                }, {"otherHeaders": "otherHeaders"});
-                this.subscribe("/user/greeting", function(data) {
-                    var resultData = JSON.parse(data.body);
-                    $("#receiveData").append("<p>指定用户回调体=>" + resultData.data + "</p>");
                 }, {"otherHeaders": "otherHeaders"});
             },
             function(error) {
@@ -75,8 +70,6 @@ $(function () {
         }
 
         var sendUser = prompt("指定您要发送的用户，默认为 jomchen", "jomchen");
-        var sendData = prompt("指定要发送的信息，默认为 LINUX", "LINUX");
-
         var dataObj = {"sendUser": sendUser, "sendData": data};
         sendObj['data'] = dataObj;
         stompClient.send("/app/sendToUser", {}, JSON.stringify(sendObj));
