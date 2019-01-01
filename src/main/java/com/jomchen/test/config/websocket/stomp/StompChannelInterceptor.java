@@ -14,7 +14,6 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * create by Jomchen on 12/31/18
@@ -22,7 +21,6 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component("stompChannelInterceptor")
 public class StompChannelInterceptor implements ChannelInterceptor {
 
-    /*Map<String, JomchenAuthentication> AUTHENTICATION = new ConcurrentHashMap<>();*/
 
     private Logger logger = LoggerFactory.getLogger(StompChannelInterceptor.class);
 
@@ -49,7 +47,6 @@ public class StompChannelInterceptor implements ChannelInterceptor {
                 String username = usernameList.get(0);
                 if (!StringUtils.isEmpty(username)) {
                     JomchenAuthentication jomchenAuthentication = new JomchenAuthentication(username);
-                    /*AUTHENTICATION.put(username, jomchenAuthentication);*/
                     stompHeaderAccessor.setUser(jomchenAuthentication);
                 }
             }

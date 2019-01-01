@@ -43,7 +43,7 @@ public class SimpleWebSocketHandshake extends DefaultHandshakeHandler {
                 List<String> valueList = m.getValue();
                 for (int i = 0; i < valueList.size(); i ++) {
                     String printValue = String.format(HEADERS_DEMO, key, valueList.get(i));
-                    logger.info(printValue);
+                    logger.info("handshake<-->" + printValue);
                 }
             }
         }

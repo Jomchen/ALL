@@ -25,6 +25,7 @@ public class StompWebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
+        // 暴露连接
         registry.addEndpoint("/stompPoint")
                 .setAllowedOrigins("*")
                 .addInterceptors(stompWebSocketInterceptor)
@@ -35,8 +36,10 @@ public class StompWebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         // 访问处理器前缀
         registry.setApplicationDestinationPrefixes("/app");
-        // 订阅允许的前缀（只有第一个前缀在 @MessageMapping 方法执行完毕后响应到代理时，如果没有加 @SendTo 或 @SendToUser 注解
-        // 显示声明地址，会默认加上此处声明的第一个前缀，这里即 /topic
+        // 订阅允许的前缀（只有第一个前缀在 @MessageMapping 方法执行完毕后响应到代理时：
+        // 如果没有加 @SendTo 或 @SendToUser 注解
+        // 如果显示声明地址，会默认加上此处声明的第一个前缀，这里即 /topic
+        // 不建议不加 @SendTo 或 @SendToUser
         registry.enableSimpleBroker("/topic", "/queue");
         // 点对点订阅前缀，配合订阅前缀即 /user/queue/其它
         registry.setUserDestinationPrefix("/user");
