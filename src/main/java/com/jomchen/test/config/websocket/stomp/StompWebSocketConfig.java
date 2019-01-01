@@ -33,9 +33,13 @@ public class StompWebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.setApplicationDestinationPrefixes("/app"); // 访问处理器前缀
-        registry.enableSimpleBroker("/topic", "/queue"); // 订阅前缀
-        registry.setUserDestinationPrefix("/user"); // 点对点订阅前缀，配合订阅前缀即 /user/queue/其它
+        // 访问处理器前缀
+        registry.setApplicationDestinationPrefixes("/app");
+        // 订阅允许的前缀（只有第一个前缀在 @MessageMapping 方法执行完毕后响应到代理时，如果没有加 @SendTo 或 @SendToUser 注解
+        // 显示声明地址，会默认加上此处声明的第一个前缀，这里即 /topic
+        registry.enableSimpleBroker("/topic", "/queue");
+        // 点对点订阅前缀，配合订阅前缀即 /user/queue/其它
+        registry.setUserDestinationPrefix("/user");
     }
 
     /**
