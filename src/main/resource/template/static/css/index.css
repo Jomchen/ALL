@@ -3,15 +3,75 @@ html, body {
     padding: 0;
 }
 
-.index {
-    width: 100px;
-    height: 100px;
-    background-color: red;
+body {
+    width: 100%;
+    height: 100%;
 }
 
-.left-munu {
+/* 全部内容 */
+#Homepage-all-div {
+    width: 100%;
+    position: relative;
+    background-color: #000000;
+}
+
+/* banner */
+#Homepage-banner-div {
+    width: 100%;
+    height: 100px;
+    background-color: yellow;
+}
+
+/* 导航 */
+#Homepage-navigation-div {
+    width: 20%;
+    background-color: #0033cc;
+    float: left;
+}
+#Homepage-navigation-div > ul.navigation-content > li {
+    border-bottom: #003399 2px solid;
+}
+#Homepage-navigation-div > ul.navigation-content > li:last-child {
+    border-bottom: none;
+}
+.navigation-content {
     margin: 0;
     padding: 0;
-    list-style-type: none;
+    list-style: none;
+}
+.navigation-content > li {
+    text-align: center;
+}
+.navigation-content > li > ul.navigation-content {
+    display: none;
+}
+
+.navigation-content a {
+    color: #FFFFFF;
     text-decoration: none;
+    display: block;
+}
+.navigation-content a.navigation-title {
+    padding: 1% 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FF0000;
+}
+.navigation-title + ul.navigation-content {
+    font-size: 1.25em;
+    background-color: #0033FF;
+}
+.navigation-content a.navigation-title:hover {
+    padding-right: 9%;
+}
+.navigation-title + ul.navigation-content > li:hover {
+    background-color: #003399;
+}
+
+/* 主体内容 */
+#Homepage-content-div {
+    width: 80%;
+    height: 100%;
+    background-color: #888888;
+    overflow: auto;
 }
