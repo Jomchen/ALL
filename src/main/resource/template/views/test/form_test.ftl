@@ -4,6 +4,7 @@
     <head>
         <title>表单测试</title>
         <#include "/template/views/common/component.ftl"/>
+        <link rel="stylesheet" href="/template/static/css/test/form_test.css"/>
         <script type="text/javascript" src="/template/static/js/test/form_test.js"></script>
     </head>
 
