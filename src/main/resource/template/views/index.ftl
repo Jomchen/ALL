@@ -16,10 +16,12 @@
             <ul class="navigation-content">
                 <li>
                     <a class="navigation-title" href="#">测试页面</a>
-                    <li><a href="/form/test">表单测试</a></li>
-                    <li><a href="/websocket/simple/page">简单 页面</a></li>
-                    <li><a href="/websocket/sockjs/page">sockjs 页面</a></li>
-                    <li><a href="/websocket/stomp/page">stomp 页面</a></li>
+                    <ul class="navigation-content">
+                        <li><a href="/form/test">表单测试</a></li>
+                        <li><a href="/websocket/simple/page">简单 页面</a></li>
+                        <li><a href="/websocket/sockjs/page">sockjs 页面</a></li>
+                        <li><a href="/websocket/stomp/page">stomp 页面</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a class="navigation-title" href="#">武功</a>
