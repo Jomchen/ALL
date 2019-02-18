@@ -3,7 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
     <plugins>
         <plugin interceptor="com.jomchen.test.mybatis.plugin.ExamplePlugin">
             <property name="someproperty" value="100"/>
@@ -15,21 +14,20 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://10.0.0.210:3306/zzw1?useUnicode=true&amp;characterEncoding=UTF-8"/>
-                <property name="username" value="write"/>
-                <property name="password" value="zzw123456"/>
+                <property name="url" value="jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true"/>
+                <property name="username" value="jomchen"/>
+                <property name="password" value="jomchen"/>
+                <!--<property name="maxActive" value="20"/>-->
+                <!--<property name="initialSize" value="1"/>-->
+                <!--<property name="maxWait" value="60000"/>-->
             </dataSource>
         </environment>
     </environments>
 
 
     <mappers>
-        <mapper resource="mapper/ThirdUserWechatMapper.xml"/>
-        <!--<mapper resource="org/mybatis/example/BlogMapper.xml"/>-->
-        <!--<package name="mapper" />-->
+        <mapper resource="mapper/UserMapper.xml"/>
     </mappers>
-
-
 </configuration>
 
 

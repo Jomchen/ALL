@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jomchen.test.mybatis.mapper.UserMapper">
+
+    <resultMap id="user" type="com.jomchen.test.model.User">
+        <!-- id 如果有多个则可以指定多个id的元素 -->
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="age" column="age"/>
+        <result property="address" column="address"/>
+        <result property="remark" column="remark"/>
+        <result property="deletec" column="deletec"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+
+    <select id="queryById" resultMap="user">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <insert id="add" parameterType="com.jomchen.test.model.User">
+        INSERT INTO user(id,username,age,address,remark,deletec,create_time,update_time) VALUES(
+          #{id},#{username},#{age},#{address},#{remark},#{deletec},#{createTime},#{updateTime}
+        )
+    </insert>
+
+    <select id="getList" resultMap="user">
+        SELECT * FROM user
+    </select>
+
+</mapper>
