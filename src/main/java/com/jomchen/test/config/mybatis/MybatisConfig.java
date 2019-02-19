@@ -11,14 +11,12 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 
-import java.io.IOException;
-
 /**
  * create by Jomchen on 2018/12/17
  */
 public class MybatisConfig {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
         druidDataSource.setUrl("jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false");

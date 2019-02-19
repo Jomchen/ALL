@@ -17,9 +17,17 @@ public class Freemarker {
     @Bean
     public FreeMarkerConfigurer freeMarkerConfigurer() {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
-        freeMarkerConfigurer.setTemplateLoaderPath("classpath:/"); // 这个是指定视图的根路径
+        /* ---------------------------
+            1. 这个是指定视力的根路径
+            2. 如果此路径设为“/a/b”，那么视图会视“/a/b”为根路径，
+               不管是找资源还是找模板都是在此路径下找
+            3. 如果设成“classpath:/”，那么项目的逻辑根视为视图的根；依目前项目配置，
+               是 src/main/resource 和 src/main/java
+        ---------------------------*/
+        freeMarkerConfigurer.setTemplateLoaderPath("classpath:/");
         freeMarkerConfigurer.setDefaultEncoding("UTF-8");
         freeMarkerConfigurer.setFreemarkerVariables(new HashMap<String, Object>() {
+            // 模板数据初始化
             {
                 put("adminName", "Jomchen");
                 put("adminAge", 22);
