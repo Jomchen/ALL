@@ -16,14 +16,18 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
-
+    <sql id="userColumn">
+        (id,username,age,address,remark,deletec,create_time,update_time)
+    </sql>
 
     <select id="queryById" resultMap="user">
         SELECT * FROM user WHERE id = #{id}
     </select>
 
     <insert id="add" parameterType="com.jomchen.test.model.User">
-        INSERT INTO user(id,username,age,address,remark,deletec,create_time,update_time) VALUES(
+        INSERT INTO user(
+          <include refid="userColumn"/>
+        ) VALUES(
           #{id},#{username},#{age},#{address},#{remark},#{deletec},#{createTime},#{updateTime}
         )
     </insert>
