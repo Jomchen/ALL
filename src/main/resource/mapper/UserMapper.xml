@@ -17,7 +17,7 @@
     </resultMap>
 
     <sql id="userColumn">
-        (id,username,age,address,remark,deletec,create_time,update_time)
+        id,username,age,address,remark,deletec,create_time,update_time
     </sql>
 
     <select id="queryById" resultMap="user">
