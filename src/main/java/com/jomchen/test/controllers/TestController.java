@@ -4,11 +4,16 @@ import com.alibaba.fastjson.JSONObject;
 import com.jomchen.test.model.Test;
 import com.jomchen.test.services.TestServiceImpl;
 import com.jomchen.test.utils.UrlContents;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,8 +23,14 @@ import java.util.List;
 @Controller
 public class TestController {
 
+
+    private Logger logger = LoggerFactory.getLogger(TestController.class);
+
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+
     @Autowired
     private TestServiceImpl testService;
+
 
     /**
      *  所有的任何实验
@@ -30,6 +41,13 @@ public class TestController {
         // 这里进行所有的任何实验
         // 这里进行所有的任何实验
         // 这里进行所有的任何实验
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        logger.info("LINUX 00 -------------------> " + simpleDateFormat.format(new Date()));
         return new JSONObject()
                 .fluentPut("code", 0)
                 .fluentPut("msg", "successful")
