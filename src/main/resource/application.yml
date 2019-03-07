@@ -5,11 +5,9 @@ jomchen:
   domain:
     name: www.jomchen.top
   wechat:
-    appsecret: dfa886fad88fe2cd72da2e642358b499
-    appID: wx77747fc33d65088b
-    token: 123456
-
-
+    appsecret: xxx
+    appID: xxx
+    token: xxx
 
 # rabbitmq config
 customer:
@@ -38,5 +36,3 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.jomchen.test.model
-
-
