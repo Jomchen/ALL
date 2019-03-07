@@ -7,6 +7,8 @@ public interface UrlContents {
 
     String INDEX = "/";
 
+    String WECHAT_RECEIVE = "/jomchen/wechat/receive";
+
     String RABBITMQ_SINGLE = "/rabbitmq/single";
     String RABBITMQ_MORE_SINGLE = "/rabbitmq/more/single";
     String RABBITMQ_FANOUT= "/rabbitmq/fanout";
