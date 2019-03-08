@@ -19,15 +19,16 @@ public class WechatController {
 
     private Logger logger = LoggerFactory.getLogger(WechatController.class);
 
+    @Autowired
+    private HttpServletRequest request;
+
     @Value("${jomchen.wechat.appsecret}")
     private String appsecret;
-    @Value("${jomchen.wechat.appId}")
+    @Value("${jomchen.wechat.appID}")
     private String appId;
     @Value("${jomchen.wechat.token}")
     private String token;
 
-    @Autowired
-    private HttpServletRequest request;
 
     @RequestMapping(UrlContents.WECHAT_RECEIVE)
     @ResponseBody
@@ -39,14 +40,12 @@ public class WechatController {
         logger.warn("微信预成为开发者请求验证。。");
         boolean check = WechatUtils.checkSignature(signature, timestamp, nonce, token);
         logger.warn("微信成为开发者 " + (check ? "成功" : "失败"));
-        if (check) {
-            return echostr;
-        } else {
-            return new JSONObject()
-                    .fluentPut("code", 0)
-                    .fluentPut("msg", "success")
-                    .toString();
-        }
+
+        return check ?
+                echostr : new JSONObject()
+                            .fluentPut("code", 0)
+                            .fluentPut("msg", "success")
+                            .toString();
     }
 
 }
