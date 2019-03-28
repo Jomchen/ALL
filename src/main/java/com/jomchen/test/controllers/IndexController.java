@@ -40,7 +40,8 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/download")
-    public void download() throws IOException {
+    @ResponseBody
+    public String download() throws IOException {
         FileSystemResource fileSystemSource = new FileSystemResource("/opt/ngrok.config.tar.gz");
         String fileName = fileSystemSource.getFilename();
         InputStream inputStream = fileSystemSource.getInputStream();
@@ -64,6 +65,7 @@ public class IndexController {
         outputStream.write(data);
         outputStream.flush();
         outputStream.close();
+        return null;
     }
 
 }
