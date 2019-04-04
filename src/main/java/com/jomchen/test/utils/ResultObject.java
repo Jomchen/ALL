@@ -1,8 +1,5 @@
 package com.jomchen.test.utils;
 
-import java.util.Random;
-import java.util.UUID;
-
 /**
  * create by Jomchen on 12/30/18
  */
@@ -25,6 +22,13 @@ public class ResultObject<T> {
         resultObject.setCode(ResultObject.SUCCESS_CODE);
         resultObject.setMessage(ResultObject.SUCCESS_MESSAGE);
         resultObject.setData(data);
+        return resultObject;
+    }
+    public static <T> ResultObject<T> buildSuccess(String requestId) {
+        ResultObject<T> resultObject = new ResultObject<>();
+        resultObject.setRequestId(requestId);
+        resultObject.setCode(ResultObject.SUCCESS_CODE);
+        resultObject.setMessage(ResultObject.SUCCESS_MESSAGE);
         return resultObject;
     }
 

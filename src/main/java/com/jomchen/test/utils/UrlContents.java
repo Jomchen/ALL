@@ -5,9 +5,13 @@ package com.jomchen.test.utils;
  */
 public interface UrlContents {
 
-    String INDEX = "/";
+    String INDEX = "/";    // 主页
 
-    String WECHAT_RECEIVE = "/jomchen/wechat/receive";
+    String DOWN_LOAD = "/test/download";    // 下载测试
+    String TEST_GENERATE_CSV = "/test/generate/csv";    // 测试生成 csv
+    String TEST_RESOLVE_CSV = "/test/resolve/csv";    // 测试解析 csv
+
+    String WECHAT_RECEIVE = "/jomchen/wechat/receive";    // 成为 wechat 开发者
 
     String RABBITMQ_SINGLE = "/rabbitmq/single";
     String RABBITMQ_MORE_SINGLE = "/rabbitmq/more/single";

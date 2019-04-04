@@ -15,7 +15,7 @@
     <property name="appName" value="ALL-springBoot"></property>
 
     <!-- ch.qos.logback.core.ConsoleAppender 表示控制台输出 -->
-    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <!--
             日志输出格式：
                 %d表示日期时间，
@@ -29,16 +29,17 @@
         -->
         <layout class="ch.qos.logback.classic.PatternLayout">
             <springProfile name="dev">
-                <pattern>%-5p | %d{yyyy-MM-dd HH:mm:ss} | %thread | %c | %m%n</pattern>
+                <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | [%thread] | %-5level | %logger{50} | %msg%n</pattern>
             </springProfile>
             <springProfile name="!dev">
-                <pattern>%-5p | %d{yyyy-MM-dd HH:mm:ss} | %thread | %c | %m%n</pattern>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | [%thread] | %-5level | %logger{50} | %msg%n</pattern>
             </springProfile>
         </layout>
     </appender>
 
     <!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 -->
-    <appender name="appLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 指定日志文件的名称 -->
         <file>${LOG_HOME}/${appName}.log</file>
         <!--
@@ -67,7 +68,7 @@
         </rollingPolicy>
         <!-- 日志输出格式： -->
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <pattern>%-5p | %d{yyyy-MM-dd HH:mm:ss} | %thread | %c | %m%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | [%thread] | %-5level | %logger{50} | %msg%n</pattern>
         </layout>
     </appender>
 
@@ -76,9 +77,9 @@
         要么是定义的logger，要么是root（有logger则根据logger否则根据root）
         判断的关键在于找到这个logger，然后判断这个logger的appender和level。
     -->
-    <root level="DEBUG">
-        <appender-ref ref="stdout" />
-        <appender-ref ref="appLogAppender" />
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
     </root>
 
     <!--
@@ -89,8 +90,6 @@
 			false：表示只用当前logger的appender-ref，
 			true：表示当前logger的appender-ref和rootLogger的appender-ref都有效
     -->
-    <!-- hibernate logger -->
-    <logger name="org.hibernate" level="DEBUG" />
-    <!-- Spring framework logger -->
-    <logger name="org.springframework" level="DEBUG" additivity="false"></logger>
+    <!--<logger name="org.hibernate" level="INFO" additivity="false"/>-->
+    <logger name="org.springframework" level="INFO" />
 </configuration>
