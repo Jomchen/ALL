@@ -21,6 +21,7 @@
                         <li><a href="/websocket/simple/page">简单 页面</a></li>
                         <li><a href="/websocket/sockjs/page">sockjs 页面</a></li>
                         <li><a href="/websocket/stomp/page">stomp 页面</a></li>
+                        <li><a href="/test/upload/page">上传文件页面</a></li>
                     </ul>
                 </li>
                 <li>

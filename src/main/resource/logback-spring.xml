@@ -91,5 +91,5 @@
 			true：表示当前logger的appender-ref和rootLogger的appender-ref都有效
     -->
     <!--<logger name="org.hibernate" level="INFO" additivity="false"/>-->
-    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework" level="INFO" /> <!-- 此处不加则不会有 springboot 的显示日志 -->
 </configuration>

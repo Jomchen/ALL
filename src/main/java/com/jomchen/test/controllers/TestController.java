@@ -5,6 +5,7 @@ import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 import com.jomchen.test.model.Test;
 import com.jomchen.test.services.TestServiceImpl;
+import com.jomchen.test.utils.RequestIdContext;
 import com.jomchen.test.utils.ResultObject;
 import com.jomchen.test.utils.UrlContents;
 import org.slf4j.Logger;
@@ -12,8 +13,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -139,6 +140,24 @@ public class TestController {
         csvWriter.flush();
         csvWriter.close();
         return ResultObject.buildSuccess("writeCsv");
+    }
+
+    @GetMapping(UrlContents.TEST_UPLOAD_PAGE)
+    public String uploadPage() {
+        return "test/upload_page";
+    }
+
+    @RequestMapping(value = UrlContents.TEST_UPLOAD_FILE, method = RequestMethod.POST)
+    @ResponseBody
+    public ResultObject uploadFile(
+            @RequestParam("uploadFile") MultipartFile uploadFile,
+            @RequestParam("discrible") String discrible) {
+
+        String fileName = uploadFile.getOriginalFilename();
+        System.out.println("描述为：" + discrible);
+        System.out.println("文件名为：" + fileName);
+        String requestId = RequestIdContext.get();
+        return ResultObject.buildSuccess(requestId);
     }
 
 

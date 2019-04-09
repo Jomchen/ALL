@@ -5,13 +5,15 @@ package com.jomchen.test.utils;
  */
 public interface UrlContents {
 
-    String INDEX = "/";    // 主页
+    String INDEX = "/";                                    // 主页
 
-    String DOWN_LOAD = "/test/download";    // 下载测试
-    String TEST_GENERATE_CSV = "/test/generate/csv";    // 测试生成 csv
-    String TEST_RESOLVE_CSV = "/test/resolve/csv";    // 测试解析 csv
+    String DOWN_LOAD = "/test/download";                   // 下载测试
+    String TEST_GENERATE_CSV = "/test/generate/csv";       // 测试生成 csv
+    String TEST_RESOLVE_CSV = "/test/resolve/csv";         // 测试解析 csv
+    String TEST_UPLOAD_PAGE = "/test/upload/page";         // 上传文件测试页面
+    String TEST_UPLOAD_FILE = "/test/upload/file";         // 上传文件
 
-    String WECHAT_RECEIVE = "/jomchen/wechat/receive";    // 成为 wechat 开发者
+    String WECHAT_RECEIVE = "/jomchen/wechat/receive";     // 成为 wechat 开发者
 
     String RABBITMQ_SINGLE = "/rabbitmq/single";
     String RABBITMQ_MORE_SINGLE = "/rabbitmq/more/single";
