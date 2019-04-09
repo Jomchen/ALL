@@ -28,10 +28,12 @@ spring:
 
   # datasource
   datasource:
-    url: jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
+    #url: jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
+    url: jdbc:log4jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
     username: jomchen
     password: jomchen
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: net.sf.log4jdbc.DriverSpy
+    #driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
