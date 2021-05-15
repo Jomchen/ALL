@@ -12,7 +12,7 @@ jomchen:
 # rabbitmq config
 customer:
   rabbitmq:
-    host: 192.168.0.105
+    host: 192.168.0.106
     port: 5672
     username: guest
     password: guest
