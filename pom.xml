@@ -135,7 +135,7 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.38</version>
+      <version>8.0.28</version>
     </dependency>
     <!-- 这个依赖支持 sql 捕捉显示sql的值 -->
     <dependency>
