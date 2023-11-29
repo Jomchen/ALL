@@ -24,9 +24,9 @@
         <!-- url -->
         <property name="url" value="jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true" />
         <!-- 用户名 -->
-        <property name="username" value="jomchen" />
+        <property name="username" value="lemonwind" />
         <!-- 密码 -->
-        <property name="password" value="jomchen" />
+        <property name="password" value="lemonwind" />
     </bean>
 
     <!--3 会话工厂bean sqlSessionFactoryBean -->
@@ -44,7 +44,7 @@
         <!--指定会话工厂，如果当前上下文中只定义了一个则该属性可省去 -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
         <!-- 指定要自动扫描接口的基础包，实现接口 -->
-        <property name="basePackage" value="com.jomchen.test.mybatis.mapper"></property>
+        <property name="basePackage" value="com.lemonwind.test.mybatis.mapper"></property>
     </bean>
 
     <!--5 声明式事务管理 -->
@@ -57,7 +57,7 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!--6 容器自动扫描IOC组件  -->
-    <context:component-scan base-package="com.jomchen.test.services"></context:component-scan>
+    <context:component-scan base-package="com.lemonwind.test.services"></context:component-scan>
 
     <!--7 aspectj支持自动代理实现AOP功能 -->
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>

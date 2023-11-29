@@ -30,7 +30,7 @@ $(function() {
             $("#receiveData").append("<p>错误：" + new Date() + "</p>");
         }
     };
-    var simpleWebSocket = new JomchenSimpleWebSocket(connectionParam);
+    var simpleWebSocket = new lemonwindSimpleWebSocket(connectionParam);
 
     $("#sendButton").click(function() {
         var sendData = $("#sendData").val();

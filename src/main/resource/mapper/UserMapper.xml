@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jomchen.test.mybatis.mapper.UserMapper">
+<mapper namespace="com.lemonwind.test.mybatis.mapper.UserMapper">
 
-    <resultMap id="user" type="com.jomchen.test.model.User">
+    <resultMap id="user" type="com.lemonwind.test.model.User">
         <!-- id 如果有多个则可以指定多个id的元素 -->
         <id property="id" column="id"/>
         <result property="username" column="username"/>
@@ -24,7 +24,7 @@
         SELECT * FROM user WHERE id = #{id}
     </select>
 
-    <insert id="add" parameterType="com.jomchen.test.model.User">
+    <insert id="add" parameterType="com.lemonwind.test.model.User">
         INSERT INTO user(
           <include refid="userColumn"/>
         ) VALUES(

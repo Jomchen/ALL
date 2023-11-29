@@ -6,7 +6,7 @@ $(function () {
      * 建立连接
      */
     $("#setUpConnection").click(function () {
-        var loginName = prompt("请办理入您的登录名字，默认为 jomchen", "jomchen");
+        var loginName = prompt("请办理入您的登录名字，默认为 lemonwind", "lemonwind");
         var sockJS = new SockJS('http://127.0.0.1:8080/stompPoint');
         stompClient = Stomp.over(sockJS);
         stompClient.connect(
@@ -69,7 +69,7 @@ $(function () {
             return;
         }
 
-        var sendUser = prompt("指定您要发送的用户，默认为 jomchen", "jomchen");
+        var sendUser = prompt("指定您要发送的用户，默认为 lemonwind", "lemonwind");
         var dataObj = {"sendUser": sendUser, "sendData": data};
         sendObj['data'] = dataObj;
         stompClient.send("/app/sendToUser", {}, JSON.stringify(sendObj));

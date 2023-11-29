@@ -1,9 +1,9 @@
 server:
   port: 8080
 
-jomchen:
+lemonwind:
   domain:
-    name: www.jomchen.top
+    name: www.lemonwind.top
   wechat:
     appsecret: xxx
     appID: xxx
@@ -30,11 +30,11 @@ spring:
   datasource:
     #url: jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
     url: jdbc:log4jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
-    username: jomchen
-    password: jomchen
+    username: lemonwind
+    password: lemonwind
     driver-class-name: net.sf.log4jdbc.DriverSpy
     #driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
-  type-aliases-package: com.jomchen.test.model
+  type-aliases-package: com.lemonwind.test.model

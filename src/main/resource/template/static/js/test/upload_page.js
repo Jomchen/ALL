@@ -6,7 +6,7 @@ $(function() {
         console.log("--------size: " + uploadFile.size);
         var formData = new FormData();
         formData.append("uploadFile", uploadFile);
-        formData.append("discrible", "Jomchen");
+        formData.append("discrible", "lemonwind");
         $.ajax({
             url: "/test/upload/file",
             type: "POST",

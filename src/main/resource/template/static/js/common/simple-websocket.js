@@ -14,7 +14,7 @@ function WebSocketFunction() {
     this.onerrorEvent = function() {};
 }
 
-function JomchenSimpleWebSocket(websocketFunction) {
+function lemonwindSimpleWebSocket(websocketFunction) {
     this.websocket;
     this.closeWebSocket = function() {
         this.websocket.close();
@@ -39,9 +39,9 @@ function JomchenSimpleWebSocket(websocketFunction) {
             websocketFunction.onopenEvent(stateNumber);
         };
 
-        var _jomchenWebSocket = this;
+        var _lemonwindWebSocket = this;
         window.onbeforeunload = function() {
-            _jomchenWebSocket.closeWebSocket();
+            _lemonwindWebSocket.closeWebSocket();
         };
         this.websocket.onmessage = function(ev) {
             websocketFunction.onmessageEvent(ev.data);
@@ -55,7 +55,7 @@ function JomchenSimpleWebSocket(websocketFunction) {
     };
 }
 
-function JomchenStompWebSocket() {
+function lemonwindStompWebSocket() {
     this.websocket;
     this.setUpConnection;
     this.sendData;
@@ -63,7 +63,7 @@ function JomchenStompWebSocket() {
 }
 
 /*
-function JomchenWebSocket() {
+function lemonwindWebSocket() {
     this.websocket;
     this.closeWebSocket = function() {
         this.websocket.close();
@@ -94,9 +94,9 @@ function JomchenWebSocket() {
             }
         };
 
-        var _jomchenWebSocket2 = this;
+        var _lemonwindWebSocket2 = this;
         window.onbeforeunload = function() {
-            _jomchenWebSocket2.closeWebSocket();
+            _lemonwindWebSocket2.closeWebSocket();
         };
         this.websocket.onmessage = function(ev) {
             var receiveData = ev.data;

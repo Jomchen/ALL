@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <plugins>
-        <plugin interceptor="com.jomchen.test.mybatis.plugin.ExamplePlugin">
+        <plugin interceptor="com.lemonwind.test.mybatis.plugin.ExamplePlugin">
             <property name="someproperty" value="100"/>
         </plugin>
     </plugins>
@@ -15,8 +15,8 @@
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://192.168.0.105:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true"/>
-                <property name="username" value="jomchen"/>
-                <property name="password" value="jomchen"/>
+                <property name="username" value="lemonwind"/>
+                <property name="password" value="lemonwind"/>
                 <!--<property name="maxActive" value="20"/>-->
                 <!--<property name="initialSize" value="1"/>-->
                 <!--<property name="maxWait" value="60000"/>-->
